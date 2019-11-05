@@ -57,6 +57,25 @@ var orm = {
       }
       cb(result);
     });
+  },
+  insertOne: function(table, cols, vals, cb){
+    console.log("In orm.js");
+    var queryStr = "INSERT INTO " + table;
+
+    queryStr += " (";
+    queryStr += cols.toString();
+    queryStr += " )";
+    queryStr += "VALUES (";
+    queryStr += printQuestionMarks(vals.length);
+    queryStr += ") ";
+
+    console.log("query string: " + queryStr);
+    connection.query(queryStr, vals, function(err, result){
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
   }
 };
 

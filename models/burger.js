@@ -6,6 +6,12 @@ var burger = {
         orm.all("burgers", function(res) {
             cb(res);
         });
+    },
+    insertOne: function(cols, vals, cb) {
+        console.log("In burger.js");
+        orm.insertOne("burgers", cols, vals, function(res){
+            cb(res);
+        });
     }
 };
 

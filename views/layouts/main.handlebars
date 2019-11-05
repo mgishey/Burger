@@ -31,12 +31,25 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            //alert("Javascript works");
+            $("#submit").on("click", function (event) {
+                event.preventDefault();
 
+                var newBurger = {
+                    burger_name: $("#newBurger").val().trim(),
+                    devoured: 0
+                };
+                console.log("New Burger: " + newBurger);
 
-
-
-
+                // Send the POST request
+                $.ajax("api/burgers", {
+                    type: "POST",
+                    data: newBurger
+                }).then(
+                    function () {
+                        console.log("created new burger");
+                    }
+                );
+            });
         });
 
 

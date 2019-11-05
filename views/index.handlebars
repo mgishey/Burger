@@ -1,5 +1,5 @@
 <div class="container">
-    
+
     <div class="row">
         <!-- Uneaten Burgers -->
         <div class="col-sm-6">
@@ -10,7 +10,7 @@
                         {{#unless devoured}}
                         <span> {{this.id}} - {{this.burger_name}} </span>
                         <button type="button" class="eatburger btn btn-warning" id="eatbutton" data-id="{{this.id}}"
-                            data-newDevoured="{{devour}}"></button>
+                            data-newDevoured="{{devour}}">Devour</button>
                         <hr>
                         {{/unless}}
                         {{/each}}
@@ -18,6 +18,34 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <ul>
+                        {{#each burgers}}
+                        {{#if devoured}}
+                        <span> {{this.id}} - {{this.burger_name}} </span>
+                        {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="row" id="form">
+        <div class="col-sm-12 d-flex justify-content-center">
+            <form>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Add a Burger</label>
+                    <textarea class="form-control" id="newBurger" rows="3"></textarea>
+                </div>
+                <button class="btn btn-success" type="submit" id="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
 
 </div>

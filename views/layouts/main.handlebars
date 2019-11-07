@@ -47,10 +47,29 @@
                 }).then(
                     function () {
                         console.log("created new burger");
+                        location.reload(true);
+                    }
+                );
+            });
+
+
+            // Deleting a burger
+
+            $(".devour").on("click", function () {
+                console.log("In Devour");
+                var id = $(this).val();
+                console.log("Delivered ID: " + id);
+                $.ajax("/api/burgers/" + id, {
+                    type: "DELETE"
+                }).then(
+                    function () {
+                        console.log("Deleted burger", id);
+                        location.reload(true);
                     }
                 );
             });
         });
+
 
 
 

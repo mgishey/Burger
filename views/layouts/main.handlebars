@@ -53,17 +53,29 @@
             });
 
 
-            // Deleting a burger
+            // Updating a burger
 
             $(".devour").on("click", function () {
-                console.log("In Devour");
-                var id = $(this).val();
-                console.log("Delivered ID: " + id);
+                var id = $(this).data("id");
+                var eaten = $(this).data("devoured");
+
+                console.log("Devoured ID: " + id);
+                console.log("Devoured value: " + eaten)
+
+                if (eaten == 0) {
+                    eaten = 1;
+                }
+
+                var newDevouredState = {
+                    devoured: eaten
+                };
+
                 $.ajax("/api/burgers/" + id, {
-                    type: "DELETE"
+                    type: "PUT",
+                    data: newDevouredState
                 }).then(
-                    function () {
-                        console.log("Deleted burger", id);
+                    function() {
+                        console.log("changed devoured to", eaten);
                         location.reload(true);
                     }
                 );

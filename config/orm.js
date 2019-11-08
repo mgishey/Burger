@@ -77,8 +77,10 @@ var orm = {
       cb(result);
     });
   },
-  delete: function(table, condition, cb){
-    var queryStr = "DELETE FROM " + table;
+  update: function(table, objColVals, condition, cb){
+    var queryStr = "UPDATE " + table;
+    queryStr += " SET ";
+    queryStr += objToSql(objColVals);
     queryStr += " WHERE ";
     queryStr += condition;
 

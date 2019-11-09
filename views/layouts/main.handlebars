@@ -6,6 +6,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Nunito|Baloo|Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/burger_style.css" type="text/css" />
     <title>MVC Burgers</title>
     <script src="https://code.jquery.com/jquery.js"></script>
@@ -38,7 +40,7 @@
                     burger_name: $("#newBurger").val().trim(),
                     devoured: 0
                 };
-                console.log("New Burger: " + newBurger);
+                //console.log("New Burger: " + newBurger);
 
                 // Send the POST request
                 $.ajax("api/burgers", {
@@ -58,9 +60,6 @@
             $(".devour").on("click", function () {
                 var id = $(this).data("id");
                 var eaten = $(this).data("devoured");
-
-                console.log("Devoured ID: " + id);
-                console.log("Devoured value: " + eaten)
 
                 if (eaten == 0) {
                     eaten = 1;

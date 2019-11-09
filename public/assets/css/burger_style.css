@@ -1,5 +1,6 @@
 body {
-    background-color: lightcoral;
+    background-color: lightgrey;
+    font-family: "Permanent Marker";
 }
 
 .devour {
@@ -11,6 +12,26 @@ body {
     margin-top: 20px;
 }
 
-label {
+h6 {
     text-align: center;
 }
+
+img {
+    border-radius: 25px;
+    background-position: left top;
+    background-repeat: repeat;
+    padding: 20px; 
+    width: 200px;
+    height: 150px;  
+  }
+
+  .center-div {
+      margin: 0 auto;
+      text-align: center;
+  }
+
+  #submit {
+      margin-bottom: 30px;
+      
+  }
+

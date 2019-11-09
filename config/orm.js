@@ -42,11 +42,7 @@ function printQuestionMarks(num) {
     return arr.toString();
   }
   
-  // Object for all our SQL statement functions.
-// Necessary methods
-// selectAll()
-// insertOne()
-// updateOne()
+  // Object for all our SQL statement functions
 
 var orm = {
   all: function(tableInput, cb){
@@ -69,7 +65,7 @@ var orm = {
     queryStr += printQuestionMarks(vals.length);
     queryStr += ") ";
 
-    console.log("query string: " + queryStr);
+    // console.log("query string: " + queryStr);
     connection.query(queryStr, vals, function(err, result){
       if (err) {
         throw err;
@@ -84,7 +80,7 @@ var orm = {
     queryStr += " WHERE ";
     queryStr += condition;
 
-    console.log("query string: " + queryStr);
+    //console.log("query string: " + queryStr);
 
     connection.query(queryStr, function(err, result){
       if (err) {
@@ -94,12 +90,5 @@ var orm = {
     });
   }
 };
-
-
-
-
-
-
-
 
 module.exports = orm;

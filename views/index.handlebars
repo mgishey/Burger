@@ -1,5 +1,6 @@
 <div class="container">
 
+
     <div class="row">
         <!-- Uneaten Burgers -->
         <div class="col-sm-6">
@@ -9,7 +10,8 @@
                         {{#each burgers}}
                         {{#unless devoured}}
                         <span> {{this.id}} - {{this.burger_name}} </span>
-                        <button type="button" class="devour btn btn-warning" data-id="{{this.id}}" data-devoured="{{this.devoured}}">Devour</button>
+                        <button type="button" class="devour btn btn-warning" data-id="{{this.id}}"
+                            data-devoured="{{this.devoured}}">Devour</button>
                         <hr>
                         {{/unless}}
                         {{/each}}
@@ -18,6 +20,7 @@
             </div>
         </div>
 
+        <!-- Devoured Burgers -->
         <div class="col-sm-6">
             <div class="panel panel-default">
                 <div class="panel-body">
@@ -25,6 +28,7 @@
                         {{#each burgers}}
                         {{#if devoured}}
                         <span> {{this.id}} - {{this.burger_name}} </span>
+                        <hr>
                         {{/if}}
                         {{/each}}
                     </ul>
@@ -33,15 +37,17 @@
         </div>
     </div>
 
-    <div class="row" id="form">
-        <div class="col-sm-12 d-flex justify-content-center">
-            <form>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Add a Burger</label>
-                    <textarea class="form-control" id="newBurger" rows="3"></textarea>
-                </div>
+    <div class="row">
+        <div class="col-sm-12 d-flex content-center">
+            <div class="center-div">
+                <h4>Add a Burger</h4>
+                <form>
+                    <div class="form-group">
+                        <textarea class="form-control" id="newBurger" rows="3"></textarea>
+                    </div> 
+                </form>
                 <button class="btn btn-success" type="submit" id="submit">Submit</button>
-            </form>
+            </div>
         </div>
     </div>
 
